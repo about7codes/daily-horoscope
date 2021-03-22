@@ -1,38 +1,251 @@
-.App {
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap");
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css");
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Nunito", sans-serif;
+}
+
+body {
+  background: -webkit-gradient(linear, left top, right top, from(#ee9ca7), to(#ffdde1));
+  background: linear-gradient(to right, #ee9ca7, #ffdde1);
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+.loader {
   text-align: center;
+  font-size: 24px;
+  -webkit-animation: poof 0.5s;
+          animation: poof 0.5s;
+  color: #333;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.head {
+  text-align: center;
+  font-size: 3rem;
+  color: #fff;
+  text-shadow: 0 13.36px 14.896px #ee9ca7c9;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  border: 0 !important;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff));
+  background: linear-gradient(to bottom, #fff, #fff);
+  background-image: none;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Remove IE arrow */
+select::-ms-expand {
+  display: none;
+}
+
+/* Custom Select */
+.select {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 20em;
+  height: 3em;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  line-height: 3;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff));
+  background: linear-gradient(to bottom, #fff, #fff);
+  overflow: hidden;
+  border-radius: 0.25em;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.6) 0px 2px 4px -1px;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.6) 0px 2px 4px -1px;
 }
 
-.App-link {
-  color: #61dafb;
+select {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  padding: 0 0.5em;
+  color: #ea8694;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Arrow */
+.select::after {
+  content: "\25BC";
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 1em;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff));
+  background: linear-gradient(to bottom, #fff, #fff);
+  color: #ea8694;
+  cursor: pointer;
+  pointer-events: none;
+  -webkit-transition: 0.25s all ease;
+  transition: 0.25s all ease;
+}
+
+/* Transition */
+.select:hover::after {
+  color: #f2b2ba;
+}
+
+.card-box {
+  padding: 10px;
+  padding-bottom: 50px;
+}
+
+.card {
+  -webkit-animation: poof 0.5s;
+          animation: poof 0.5s;
+  padding: 10px;
+  margin: 0 auto;
+  max-width: 600px;
+  background: #fff;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff));
+  background: linear-gradient(to bottom, #fff, #fff);
+  color: #ea8694;
+  border-radius: 0.25em;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.6) 0px 2px 4px -1px;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.6) 0px 2px 4px -1px;
+  position: relative;
+}
+
+.card-a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.card-a h1 {
+  text-transform: capitalize;
+  margin: 0;
+}
+
+.card-a h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.card-b h2 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.card-c p {
+  text-align: justify;
+}
+
+.card-d {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(180px, 1fr))[auto-fill];
+      grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+}
+
+.card-d span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-weight: bold;
+}
+
+.card-d span div {
+  margin-left: 5px;
+  font-weight: normal;
+}
+
+.card-e {
+  opacity: 0;
+  -webkit-animation: slide 0.5s forwards;
+          animation: slide 0.5s forwards;
+  -webkit-animation-delay: 15000ms;
+          animation-delay: 15000ms;
+  margin: 0;
+  padding: 5px 10px;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0);
+          transform: translate(-50%, 0);
+  background: #fff;
+  background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#fff));
+  background: linear-gradient(to bottom, #fff, #fff);
+  color: #ea8694;
+  border-radius: 0 0 0.25em 0.25em;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.6) 0px 2px 4px -1px;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px, rgba(0, 0, 0, 0.6) 0px 2px 4px -1px;
+}
+
+/* Keyframes  */
+@-webkit-keyframes poof {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
   }
-  to {
-    transform: rotate(360deg);
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
   }
 }
+@keyframes poof {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-5px);
+            transform: translateY(-5px);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+@-webkit-keyframes slide {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(-50%, -100%);
+            transform: translate(-50%, -100%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+  }
+}
+
+@keyframes slide {
+  0% {
+    opacity: 0;
+    -webkit-transform: translate(-50%, -100%);
+            transform: translate(-50%, -100%);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+  }
+}
+/*# sourceMappingURL=App.css.map */
